@@ -18,7 +18,7 @@
 */
 
 
-loadoutFactionBlu = "";
+loadoutFactionBlu = "USMPT";
 loadoutFactionOpf = "";
 loadoutFactionInd = "";
 
