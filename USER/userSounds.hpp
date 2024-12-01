@@ -45,7 +45,7 @@ class radiocall1
     // how the sound is referred to in the editor (e.g. trigger effects)
     name = "radiocall1";
     // filename, volume, pitch, distance (optional)
-    sound[] = { "USER\sounds\radiocall1.ogg", 2, 1, DISTANCE };
+    sound[] = { "USER\sounds\radiocall1.ogg", 10, 1, DISTANCE };
     // subtitle delay in seconds, subtitle text
     titles[] = {  };
 };

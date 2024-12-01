@@ -1,37 +1,42 @@
-// by Tova, modified by nomisum
+// for better convoy mod
 
-params ["_convoyGroup",["_convoySpeed",50],["_convoySeparation",50],["_pushThrough", true]];
+params ["_unitArray", "_waypoint"];
 
-if (_pushThrough) then {
-    _convoyGroup enableAttack !(_pushThrough);
-    {(vehicle _x) setUnloadInCombat [false, false];} forEach (units _convoyGroup);
-};
+private _logicCenter = createCenter sideLogic;
+private _logicGroup = createGroup _logicCenter;
+private _convoy = _logicGroup createUnit ["Logic", [0,0,0], [], 0, "NONE"];
+_convoy setVariable ["maxSpeed", 50];
+_convoy setVariable ["convSeparation", 25];
+_convoy setVariable ["stiffnessCoeff", 0.2];
+_convoy setVariable ["dampingCoeff", 0.6];
+_convoy setVariable ["curvatureCoeff", 0.3];
+_convoy setVariable ["stiffnessLinkCoeff", 0.1];
+_convoy setVariable ["pathFrequecy", 0.05];
+_convoy setVariable ["speedFrequecy", 0.2];
+_convoy setVariable ["speedModeConv", "FULL"];
+_convoy setVariable ["behaviourConv", "pushThroughContact"];
+_convoy setVariable ["debug", false];
 
-_convoyGroup setVariable ["convoySpeed", _convoySpeed, true];
-_convoyGroup setVariable ["convoySeparation", _convoySeparation, true];
 
-[{
-    params ["_args", "_handle"];
-    _args params ["_convoyGroup", "_pushThrough"];
+// Execute the convoy initialization script
+[_convoy, _unitArray] execVM "\nagas_Convoy\functions\fn_initConvoy.sqf";
 
-    // allows for setting speed and seperation on the fly
-    private _convoySpeed = _convoyGroup getVariable ["convoySpeed", 10]; 
-    private _convoySeparation = _convoyGroup getVariable ["convoySeparation", 10]; 
+// _convoy setVariable ["maxSpeed", 40];
 
-    if (isNull _convoyGroup) exitWith {
-        [_handle] call CBA_fnc_removePerFrameHandler;
-    };
-    
-    {
-        if ((speed vehicle _x < 5) && (_pushThrough || (behaviour _x != "COMBAT"))) then {
-            (vehicle _x) doFollow (leader _convoyGroup);
-        };  
-    } forEach (units _convoyGroup)-(crew (vehicle (leader _convoyGroup)))-allPlayers;
-    
-    {
-        (vehicle _x) limitSpeed _convoySpeed*1.15;
-        (vehicle _x) setConvoySeparation _convoySeparation;
-    } forEach (units _convoyGroup);
-    (vehicle leader _convoyGroup) limitSpeed _convoySpeed;
+(group (_unitArray#0)) addWaypoint [_waypoint, 0];
 
-}, 4, [_convoyGroup, _pushThrough]] call CBA_fnc_addPerFrameHandler;
+/*
+// stop the convoy without erasing its waypoints
+_convoy setVariable ["maxSpeed", 0];
+sleep 5; // wait for all vehicles to stop
+
+// disband the convoy
+vehicleLead setVariable ["convoy_terminate", true];
+sleep .5; // wait for script to finish
+
+// create a new convoy with only the first two vehicles
+call{ 0 = [_convoy,[vehicleLead,vehicle2]] execVM "\nagas_Convoy\functions\fn_initConvoy.sqf" };
+
+// resume
+_convoy setVariable ["maxSpeed", 40];
+*/
