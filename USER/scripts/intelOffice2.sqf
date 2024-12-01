@@ -1,7 +1,7 @@
 params ["_intel", ["_index", 0]];
 
 
-private _texts = ["
+private _texts = [["
 FROM: OperationsHQ@redveil.io\n
 TO: FieldCommand@redveil.io\n
 SUBJECT: Status Update: Lipova Lhota\n
@@ -25,7 +25,7 @@ until phase two is complete.\n
 Do not use this channel for further updates. Switch to\n
 secure comms as of 1900 hours.\n
 \n",
-"mrk_inteloffice_4"];
+"mrk_inteloffice_4"]];
 
 
 private _texture = "#(rgb,2048,2048,3)text(0,0,""LucidaConsoleB"",0.025,""#ffffff"",""#262626""," + "\n\n\n\n\n\n\n" + _texts#_index#0 + ")";
