@@ -75,7 +75,32 @@ position and prepare your team to defend the site.\n
 \n
 Maintain radio silence unless absolutely necessary.\n
 \n",
-"mrk_inteloffice_3"]
+"mrk_inteloffice_3"],
+["
+FROM: OperationsHQ@redveil.io\n
+TO: FieldCommand@redveil.io\n
+SUBJECT: Status Update: Lipova Lhota\n
+\n
+Command,\n
+\n
+The forward base at Lipova Lhota is operational and fully stocked.\n
+The recent shipment of munitions has been distributed as instructed,\n
+with additional reserves stored in the main depot. Patrol schedules\n
+have been updated to account for increased traffic in the area.\n
+\n
+Our regional handler will arrive tomorrow to inspect the site.\n
+Ensure all personnel are briefed and ready. Discreet coordination\n
+with local sympathizers has been successful—no external\n
+interference has been reported thus far.\n
+\n
+Priority Task: Begin preparing the southern approach for fallback\n
+positions in case of emergency. Lipova Lhota must remain secure\n
+until phase two is complete.\n
+\n
+Do not use this channel for further updates. Switch to\n
+secure comms as of 1900 hours.\n
+\n",
+"mrk_inteloffice_4"]
 ];
 
 

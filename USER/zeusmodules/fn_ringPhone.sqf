@@ -43,8 +43,10 @@ private _action = _nearestPhone addAction
 
         [_target, "Hey mates, we just saw 3 helicopters flying in your direction. Keep your heads low. If anything happens, retreat to Yuriks office at 0-51 0-19, I repeat 0-51 0-19, he will have company. Borislav, out.", 15] call {
             params ["_unit", "_text", "_distance"];
-            [_unit, _text] remoteExec ["globalChat", call BIS_fnc_listPlayers select { _x distance _unit < _distance }];
+            [["SATELLITE PHONE", _text, 0]] remoteExec ["BIS_fnc_EXP_camp_playSubtitles", call BIS_fnc_listPlayers select { _x distance _unit < _distance }];
         };
+
+        "mrk_intelradio" setMarkerAlpha 1;
 
     },
     nil,        // arguments

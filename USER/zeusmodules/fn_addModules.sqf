@@ -63,10 +63,39 @@
 
 
 
-["Co Buzzing Bees - Villa Phone", "Ring Phone", {
+["Co Buzzing Bees - Phone", "Ring Phone", {
      params ["_position", "_object"];
      
      [_position] remoteExec ["grad_zeusmodules_fnc_ringPhone"];
+     
+}] call zen_custom_modules_fnc_register;
+
+
+["Co Buzzing Bees - Reinforcements", "Office from South", {
+     params ["_position", "_object"];
+     
+     missionNameSpace setVariable ["buzzingbee_reinforcements1", true, true];
+     
+}] call zen_custom_modules_fnc_register;
+
+["Co Buzzing Bees - Reinforcements", "North to Hradesice", {
+     params ["_position", "_object"];
+     
+     missionNameSpace setVariable ["buzzingbee_reinforcements2", true, true];
+     
+}] call zen_custom_modules_fnc_register;
+
+["Co Buzzing Bees - Reinforcements", "West to Maly Bor", {
+     params ["_position", "_object"];
+     
+     missionNameSpace setVariable ["buzzingbee_reinforcements3", true, true];
+     
+}] call zen_custom_modules_fnc_register;
+
+["Co Buzzing Bees - Reinforcements", "Southwest to Lipova Lohta", {
+     params ["_position", "_object"];
+     
+     missionNameSpace setVariable ["buzzingbee_reinforcements4", true, true];
      
 }] call zen_custom_modules_fnc_register;
 
