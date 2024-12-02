@@ -8,7 +8,7 @@ class EditorData
 	toggles=10;
 	class ItemIDProvider
 	{
-		nextID=2763;
+		nextID=2765;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={11500.537,85.60833,9788.2188};
-		dir[]={0.53495824,-0.68859345,0.48955131};
-		up[]={0.50799072,0.72514707,0.46487316};
-		aside[]={0.67510575,5.6636054e-08,-0.73772275};
+		pos[]={9121.7607,18.9445,11195.686};
+		dir[]={-0.67420292,-0.52569973,0.5187391};
+		up[]={-0.41664594,0.85067016,0.32057193};
+		aside[]={0.60980046,1.4901161e-08,0.79255497};
 	};
 };
 binarizationWanted=0;
@@ -130,17 +130,23 @@ addons[]=
 	"A3_Structures_F_EPC_Dominants_GhostHotel",
 	"gm_core_objects",
 	"UK3CB_Factions_CHC_C",
+	"gm_weapons_machineguns_pk",
+	"ace_compat_gm",
+	"gm_weapons_pistols_pn3",
+	"A3_Characters_F_Orange_Facewear",
+	"ace_goggles",
 	"CUP_CWA_Buildings_C",
 	"A3_Structures_F_Enoch_Walls_Brick",
 	"A3_Props_F_AoW_Items_Decorative",
 	"grad_civs_common",
-	"gm_weapons_ammo"
+	"gm_weapons_ammo",
+	"ace_missionmodules"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=78;
+		items=84;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -638,21 +644,63 @@ class AddonsMetaData
 		};
 		class Item75
 		{
+			className="gm_weapons_machineguns_pk";
+			name="gm_weapons_machineguns_pk";
+			author="Global Mobilization";
+			url="global-mobilization.com";
+		};
+		class Item76
+		{
+			className="ace_compat_gm";
+			name="ACE3 - GM Compatibility";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item77
+		{
+			className="gm_weapons_pistols_pn3";
+			name="gm_weapons_pistols_pn3";
+			author="Global Mobilization";
+			url="global-mobilization.com";
+		};
+		class Item78
+		{
+			className="A3_Characters_F_Orange";
+			name="Arma 3 Orange - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item79
+		{
+			className="ace_goggles";
+			name="ACE3 - Goggles";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item80
+		{
 			className="CUP_CWA_Buildings_C";
 			name="CUP_CWA_Buildings_C";
 		};
-		class Item76
+		class Item81
 		{
 			className="grad_civs_common";
 			name="common";
 			author="AUTHOR";
 		};
-		class Item77
+		class Item82
 		{
 			className="gm_weapons_ammo";
 			name="gm_weapons_ammo";
 			author="Global Mobilization";
 			url="global-mobilization.com";
+		};
+		class Item83
+		{
+			className="ace_missionmodules";
+			name="ACE3 - Mission Modules";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
 		};
 	};
 };
@@ -10791,7 +10839,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=394;
+		items=395;
 		class Item0
 		{
 			dataType="Layer";
@@ -14643,11 +14691,11 @@ class Mission
 					};
 					id=1830;
 					type="Land_Axe_F";
-					atlOffset=-2.5808811e-05;
+					atlOffset=0.026690185;
 				};
 			};
 			id=1832;
-			atlOffset=-0.043313444;
+			atlOffset=-0.030073941;
 		};
 		class Item24
 		{
@@ -26160,12 +26208,47 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={5766.4185,41.494148,10883.599};
+						position[]={5767.293,41.494148,10883.94};
+						angles[]={0,4.0949678,-0};
 					};
 					side="Civilian";
 					flags=7;
 					class Attributes
 					{
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="rhs_weap_pkm";
+								firemode="rhs_weap_pkm:manual";
+								class primaryMuzzleMag
+								{
+									name="gm_100Rnd_762x54mmR_B_T_7t2_pk_grn";
+									ammoLeft=100;
+								};
+							};
+							class uniform
+							{
+								typeName="UK3CB_CHC_C_U_PRIEST_01";
+								isBackpack=0;
+							};
+							class vest
+							{
+								typeName="UK3CB_V_Invisible_Plate";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="rhs_100Rnd_762x54mmR_green";
+										count=2;
+										ammoLeft=100;
+									};
+								};
+							};
+							watch="ItemWatch";
+						};
 					};
 					id=2479;
 					type="UK3CB_CHC_C_PRIEST";
@@ -26244,6 +26327,21 @@ class Mission
 					flags=7;
 					class Attributes
 					{
+						class Inventory
+						{
+							class handgun
+							{
+								name="gm_pn3_gry";
+								firemode="gm_pn3_gry:gm_pn3_gry";
+							};
+							class uniform
+							{
+								typeName="UK3CB_CHC_C_U_PRIEST_01";
+								isBackpack=0;
+							};
+							watch="ItemWatch";
+							goggles="G_Spectacles";
+						};
 					};
 					id=2481;
 					type="UK3CB_CHC_C_PRIEST";
@@ -31526,7 +31624,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={2572.4658,57.927082,6271.1104};
-			angle=3.9935558;
+			angle=3.9935546;
 			class Attributes
 			{
 				sizeA=700;
@@ -31655,6 +31753,112 @@ class Mission
 					};
 				};
 				nAttributes=1;
+			};
+		};
+		class Item394
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={9123.7686,16.921547,11197.113};
+			};
+			id=2764;
+			type="ACE_moduleAmbianceSound";
+			atlOffset=0.12999916;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ACE_moduleAmbianceSound_followPlayers";
+					expression="_this setVariable ['followPlayers',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ACE_moduleAmbianceSound_minimalDelay";
+					expression="_this setVariable ['minimalDelay',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=0;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ACE_moduleAmbianceSound_soundVolume";
+					expression="_this setVariable ['soundVolume',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=1;
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ACE_moduleAmbianceSound_maximalDistance";
+					expression="_this setVariable ['maximalDistance',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=0;
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ACE_moduleAmbianceSound_maximalDelay";
+					expression="_this setVariable ['maximalDelay',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=0;
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="ACE_moduleAmbianceSound_minimalDistance";
+					expression="_this setVariable ['minimalDistance',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=0;
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="ACE_moduleAmbianceSound_soundFiles";
+					expression="_this setVariable ['soundFiles',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="organ";
+						};
+					};
+				};
+				nAttributes=7;
 			};
 		};
 	};

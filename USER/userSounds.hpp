@@ -28,6 +28,16 @@ class phoneRing2
     titles[] = {  };
 };
 
+class organ
+{
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "organ";
+    // filename, volume, pitch, distance (optional)
+    sound[] = { "USER\sounds\organ.ogg", 2, 1, DISTANCE };
+    // subtitle delay in seconds, subtitle text
+    titles[] = {  };
+};
+
 
 class garble_long
 {
