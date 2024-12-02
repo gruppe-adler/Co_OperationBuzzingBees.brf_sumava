@@ -8,5 +8,6 @@ class grad_zeusmodules {
         class ringPhone;
         class layerManagement { postInit = 1; };
         class simpleConvoy;
+        class fillBoxWithAmmo;
     };
 };

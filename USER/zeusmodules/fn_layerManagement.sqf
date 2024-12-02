@@ -8,7 +8,8 @@ _reinforcements1 params [["_objects1", []], ["_markers", []], ["_groups1", []]];
 } forEach _objects1;
 
 [{
-	missionNameSpace getVariable ["buzzingbee_reinforcements1", false]
+	params ["_objects", "_groups"];
+	missionNameSpace getVariable ["buzzingbee_reinforcements1", false] && simulationEnabled (_objects#0)
 },{
 	params ["_objects", "_groups"];
 	{
@@ -46,7 +47,8 @@ _reinforcements2 params [["_objects2", []], ["_markers", []], ["_groups2", []]];
 } forEach _objects2;
 
 [{
-	missionNameSpace getVariable ["buzzingbee_reinforcements2", false]
+	params ["_objects", "_groups"];
+	missionNameSpace getVariable ["buzzingbee_reinforcements2", false] && simulationEnabled (_objects#0)
 },{
 	params ["_objects", "_groups"];
 	{
@@ -84,7 +86,8 @@ _reinforcements3 params [["_objects3", []], ["_markers", []], ["_groups3", []]];
 } forEach _objects3;
 
 [{
-	missionNameSpace getVariable ["buzzingbee_reinforcements3", false]
+	params ["_objects", "_groups"];
+	missionNameSpace getVariable ["buzzingbee_reinforcements3", false] && simulationEnabled (_objects#0)
 },{
 	params ["_objects", "_groups"];
 	{
@@ -124,7 +127,8 @@ _reinforcements4 params [["_objects4", []], ["_markers", []], ["_groups4", []]];
 } forEach _objects4;
 
 [{
-	missionNameSpace getVariable ["buzzingbee_reinforcements4", false]
+	params ["_objects", "_groups"];
+	missionNameSpace getVariable ["buzzingbee_reinforcements4", false] && simulationEnabled (_objects#0)
 },{
 	params ["_objects", "_groups"];
 	{
